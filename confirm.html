@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <header>
+        <h1>GMR Travels Bus Booking</h1>
+        <a href="index.html" ,align="Right">Home</a>
+    </header>
+    <nav>
+        <!-- Navigation menu here -->
+    </nav>
+    <main>
+       
+        <section class="confirmation">
+            <h2>Booking Confirmation</h2>
+            <p>Thank you for booking your bus tickets with us. Your booking is confirmed.</p>
+            <h3>Booking Details:</h3>
+            <ul>
+                <li><b>Departure City:</b> <span id="departureCity">---</span></li>
+                <li><b>Arrival City:</b> <span id="arrivalCity">---</span></li>
+                <li><b>Date of Travel:</b> <span id="dateOfTravel">YYYY-MM-DD</span></li>
+                <li><strong>Passenger Details:</strong> <ul id="passengerDetails"></ul></li>
+                <li><b>Seat Number:</b> <span id="seatNumber">---</span></li>
+            </ul>
+            
+            
+            
+        </section>
+        <script>
+         alert("First login!");   
+    // Function to parse URL parameters
+    function getURLParams() {
+        var params = {};
+        var url = window.location.href;
+        var paramStr = url.split("?")[1];
+        if (paramStr) {
+            var paramArray = paramStr.split("&");
+            for (var i = 0; i < paramArray.length; i++) {
+                var param = paramArray[i].split("=");
+                params[param[0]] = decodeURIComponent(param[1]);
+            }
+        }
+        return params;
+    }
+    var params = getURLParams();
+
+
+
+// Display data in Confirm.html
+if (params.departureCity && params.arrivalCity && params.dateOfTravel && params.passengerName && params.seatNumber) {
+    document.querySelector(".confirmation li:nth-child(1)").textContent = "Departure City: " + params.departureCity;
+    document.querySelector(".confirmation li:nth-child(2)").textContent = "Arrival City: " + params.arrivalCity;
+    document.querySelector(".confirmation li:nth-child(3)").textContent = "Date of Travel: " + params.dateOfTravel;
+    document.querySelector(".confirmation li:nth-child(4)").textContent = "Passenger Name: " + params.passengerName;
+    document.querySelector(".confirmation li:nth-child(5)").textContent = "Seat Number: " + params.seatNumber;
+}
+if (params.selectedDate) {
+    document.querySelector(".confirmation li:nth-child(3)").textContent = "Date of Travel: " + params.selectedDate;
+}
+
+// Retrieve the registered name from localStorage
+var userName = localStorage.getItem("userName");
+
+//Display the name in Confirm.html
+if (userName) {
+    document.querySelector(".confirmation li:nth-child(4)").textContent = "Passenger Name: " + userName;
+}
+
+   
+</script>
+<h3>Payment QR code</h3>
+<img id="barcode" src="data:image/png;base64,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" alt="Payment Barcode">
+<p>This QR code is only for representation purpose don't pay without prior conformation in email</p>
+    </main>
+    <footer>
+        <p>&copy; 2023 Bus Booking</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS for homepage specific styles */
+        body {
+            background: url('bus_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Add the rest of your CSS styles here */
+
+        /* Style for the white boxes */
+        .place-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .bus-images {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px ; /* Adjust the margin as needed */
+    }
+
+    .bus-images img {
+        width: 150px;
+        margin-right: 20px; /* Adjust the width as needed */
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> GMR Travels Bus Booking</h1>
+        <a href="index.html">Go back</a>
+
+    </header>
+    <nav>
+        <!-- Navigation menu here -->
+    </nav>
+    <main>
+       
+        
+      
+        <script src="script.js"></script>
+        
+        
+      
+        <script>
+            // Example data to store in sessionStorage
+var bookingDetails = {
+    departureCity: "Bengaluru",
+    arrivalCity: "Mysuru",
+    dateOfTravel: "2023-10-15",
+    passengerName: "John ",
+    seatNumber: "A12",
+};
+
+// Store the data in sessionStorage
+sessionStorage.setItem("bookingDetails", JSON.stringify(bookingDetails));
+
+
+        </script>
+        <div class="bus-images">
+            <img src="data:image/jpeg;base64,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" alt="Bus Image 1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8wyTomFI-jjCwUXlYX1ciYuBzzp1eAaSTKA&usqp=CAU" alt="Bus Image 2">
+            <img src="data:image/jpeg;base64,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" alt="Bus Image 3">
+        </div>
+
+
+
+        <h1>List of Places within Karnataka</h1>
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Bengaluru&arrivalCity=Mysuru&dateOfTravel=1/11/2023&passengerName=ravi%20&seatNumber=A12">Bengaluru to Mysuru</a> - ₹800 (Distance: 150 km)
+                </li>
+            </ul>
+        </section>
+
+        <section class="place-box">
+          
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Hubli&arrivalCity=Belagavi&dateOfTravel=10/11/2023&passengerName=Surya%20&seatNumber=B11">Hubli to Belagavi</a> - ₹600 (Distance: 80 km)
+                </li>
+            </ul>
+        </section>
+
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Mangalore&arrivalCity=Udupi&dateOfTravel=12/11/2023&passengerName=Tanmay%20&seatNumber=B14">Mangalore to Udupi</a> - ₹400 (Distance: 60 km)
+                </li>
+            </ul>
+        </section>
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Bengaluru&arrivalCity=Mandya&dateOfTravel=15/11/2023&passengerName=Mohan%20&seatNumber=C15">Bengaluru to Mandya</a> - ₹800 (Distance: 150 km)
+                </li>
+            </ul>
+        </section>
+
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Bengaluru&arrivalCity=Kolar&dateOfTravel=17/11/2023&passengerName=Vishnu%20&seatNumber=C20">Bengaluru to kolar</a> - ₹300 (Distance: 100 km)
+                </li>
+            </ul>
+        </section>
+
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Bengaluru&arrivalCity=Chitradurga&dateOfTravel=20/11/2023&passengerName=Vivek%20&seatNumber=D09">Bengaluru to Chitradurga</a> - ₹500 (Distance: 150 km)
+                </li>
+            </ul>
+        </section>
+
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Bengaluru&arrivalCity=Bidar&dateOfTravel=22/11/2023&passengerName=Kevin%20&seatNumber=D25">Bengaluru to Bidar</a> - ₹200 (Distance: 180 km)
+                </li>
+            </ul>
+        </section>
+
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Bengaluru&arrivalCity=Kalaburgi&dateOfTravel=24/11/2023&passengerName=Sayan%20&seatNumber=D30">Bengaluru to Kalaburgi</a> - ₹800 (Distance: 190 km)
+                </li>
+            </ul>
+        </section>
+
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Bengaluru&arrivalCity=Tumkur&dateOfTravel=26/11/2023&passengerName=Ritesh%20&seatNumber=D32">Bengaluru to Tumkur</a> - ₹200 (Distance: 130 km)
+                </li>
+            </ul>
+        </section>
+
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Bengaluru&arrivalCity=Udupi&dateOfTravel=28/11/2023&passengerName=Tirthankar karmakar%20&seatNumber=A24">Bengaluru to Udupi</a> - ₹1000 (Distance: 200 km)
+                </li>
+            </ul>
+        </section>
+
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Bengaluru&arrivalCity=Chikkabalapur&dateOfTravel=30/11/2023&passengerName=sanjay%20&seatNumber=A27">Bengaluru to chikkabalapur</a> - ₹250 (Distance: 120 km)
+                </li>
+            </ul>
+        </section>
+
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Bengaluru&arrivalCity=Shivamogga&dateOfTravel=2/12/2023&passengerName=bharath%20&seatNumber=A32">Bengaluru to shivamogga</a> - ₹1100 (Distance: 200 km)
+                </li>
+            </ul>
+        </section>
+
+        <section class="place-box">
+           
+            <ul class="bus-list">
+                <li class="bus-item">
+                    <a href="Confirm.html?departureCity=Bengaluru&arrivalCity=Goa&dateOfTravel=5/12/2023&passengerName=homen,sun%20&seatNumber=A35">Bengaluru to Goa</a>                    - ₹20000 (Distance: 250 km)
+                   
+                </li>
+            </ul>
+        </section>
+
+        <!-- Add more place-box sections for other places within Karnataka -->
+        
+    </main>
+    <footer>
+       
+        <p>&copy; 2023 Bus Booking</p>
+    </footer>
+</body>
+</html>
+
+

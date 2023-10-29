@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        
+        function togglePassengerFields() {
+            const passengerOption = document.querySelector('input[name="passenger-option"]:checked');
+            const passengerFields = document.getElementById("passenger-fields");
+
+            if (passengerOption && passengerOption.value === "multiple") {
+                const numPassengers = parseInt(prompt("Enter the number of passengers:"));
+                if (!isNaN(numPassengers)) {
+                    let fieldsHTML = "";
+                    for (let i = 1; i <= numPassengers; i++) {
+                        fieldsHTML += `
+                            <div class="passenger-info">
+                                <label for="passenger-name-${i}">Passenger ${i} Name:</label>
+                                <input type="text" id="passenger-name-${i}" name="passenger-name-${i}" required>
+                                <label for="passenger-age-${i}">Passenger ${i} Age:</label>
+                                <input type="number" id="passenger-age-${i}" name="passenger-age-${i}" required>
+                            </div>
+                        `;
+                    }
+                    passengerFields.innerHTML = fieldsHTML;
+                }
+            } else {
+                passengerFields.innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Bus Booking</h1>
+        <a href="index.html">Home</a>
+    </header>
+    <nav>
+        <!-- Navigation menu here -->
+    </nav>
+    <main>
+        <section class="search-bar">
+            <h2>Find Your Bus</h2>
+            <form action="book.html" method="GET">
+                <div class="search-input">
+                    <label for="departure">Departure City:</label>
+                    <input type="text" id="departure" name="departure" required>
+                </div>
+                <div class="search-input">
+                    <label for="arrival">Arrival City:</label>
+                    <input type="text" id="arrival" name="arrival" required>
+                </div>
+                <div class="search-input">
+                    <label for="date">Date of Travel:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="search-input">
+                    <label>Number of Passengers:</label>
+                    <input type="radio" id="single-passenger" name="passenger-option" value="single" checked onchange="togglePassengerFields()">
+                    <label for="single-passenger">Single</label>
+                    <input type="radio" id="multiple-passengers" name="passenger-option" value="multiple" onchange="togglePassengerFields()">
+                    <label for="multiple-passengers">Multiple</label>
+                </div>
+                <div id="passenger-fields"></div>
+                <label for="bus-type">Select Bus Type:</label>
+                <input type="radio" id="ac-bus" name="bus-type" value="AC">
+                <label for="ac-bus">AC</label>
+                
+                <input type="radio" id="non-ac-bus" name="bus-type" value="Non-AC">
+                <label for="non-ac-bus">Non-AC</label>
+                <button type="submit">Search</button>
+             
+            </form>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2023 Bus Booking</p>
+    </footer>
+</body>
+</html>

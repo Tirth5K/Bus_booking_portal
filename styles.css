@@ -1,0 +1,248 @@
+/* styles.css */
+
+/* Header and Navigation */
+header {
+    background-color:white; /* Dark gray background color */
+    color: blue; /* White text color */
+    text-align: center;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #444; /* Slightly darker gray background color */
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff; /* White text color for navigation links */
+}
+
+/* Main Content Area */
+main {
+    padding: 2rem;
+    background-color: goldenrod;
+
+    background-image:"https://i.ibb.co/HPBrQkn/rotate-btn.png";
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: brown; /* Dark gray background color */
+    color: #fff; /* White text color for footer */
+    padding: 1rem;
+}
+/* styles.css */
+
+/* Search Bar Styling */
+.search-bar {
+    background-color: #f4f4f4; /* Light gray background color */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    text-align: center;
+}
+
+.search-input {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007BFF; /* Blue button background color */
+    color: #fff; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+/* styles.css */
+
+/* About Us Styling */
+.about-us {
+    background-color: lightgreen; /* Light gray background color */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+}
+
+.about-us h2 {
+    font-size: 24px;
+    color: #333; /* Dark gray text color */
+    margin-top: 0;
+}
+
+.about-us p {
+    font-size: 16px;
+    color: #555; /* Slightly darker gray text color */
+    margin: 0 0 15px;
+}
+
+.about-us ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.about-us li {
+    font-size: 16px;
+    color: #555; /* Slightly darker gray text color */
+    margin: 5px 0;
+}
+
+footer {
+    text-align: center;
+    background-color:red;
+    color: #fff; /* White text color for footer */
+    padding: 1rem;
+}
+
+ /* Additional CSS for homepage specific styles */
+ body {
+    background: url('bus_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.welcome-message {
+    text-align: center;
+    color: #fff;
+    padding: 100px 0;
+}
+
+.bus-images {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.bus-image {
+    margin: 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 20px auto; /* Add top and bottom margin to move it down */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+}
+
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+form input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    position: relative;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* Add your CSS styles for seat layout here */
+.bus {
+    display: grid;
+    grid-template-columns: repeat(5, 50px); /* Adjust the number of columns as needed */
+    gap: 10px;
+    padding: 20px;
+}
+
+.seat {
+    width: 50px;
+    height: 50px;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.seat.selected {
+    background-color: green;
+    color: white;
+}
